@@ -2,7 +2,10 @@ doctype 5
 html
   head
     title= title
+
+    link(href='http://fonts.googleapis.com/css?family=Cherry+Swash', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+
     script.
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-35154340-1']);
@@ -15,5 +18,11 @@ html
         })();
 
   body
-    block content
-    block footer
+    header
+      block header
+
+    section#content
+      block content
+
+    footer
+      block footer
