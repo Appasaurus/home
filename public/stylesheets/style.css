@@ -19,6 +19,7 @@ header {
     width: 90%;
     margin: 50px auto;
     overflow: auto;
+    text-align: center;
 }
 
 .left { float: left;}
@@ -39,6 +40,18 @@ header {
 section#banner {
     margin: 0 auto;
     width: 90%;
+    overflow: hidden;
+}
+
+#barney {
+    float: left;
+    padding-left: 5%;
+}
+
+#bannerText {
+    float: left;
+    margin-left: 5%;
+    margin-top: 20px;
 }
 
 #banner h1, #banner h2, .large-font {
