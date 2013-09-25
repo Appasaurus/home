@@ -1,0 +1,75 @@
+body {
+    background-color: #fafafc;
+    font-family: Open Sans;
+}
+
+/* Block Elements */
+section {
+    margin: 50px auto;
+    min-width: 480px;
+    max-width: 960px;
+    width: 80%;
+}
+
+form.contactForm {
+    margin-top: 50px;
+}
+
+/* Form Elements */
+form div {
+    max-width: 548px;
+    margin: 20px auto;
+    padding: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    display: none;
+}
+
+.success {
+    border: 2px solid #86d505;
+    background-color: #e8f4d3;
+    color: #86d505;
+}
+
+.failure {
+    border: 2px solid #d53605;
+    background-color: #f4ddd3;
+    color: #d53605;
+}
+
+input.txtEmail {
+    border: 2px solid #86d505;
+    font-size: 14pt;
+    padding: 10px;
+    width: 75%;
+    max-width: 450px;
+}
+
+input.btnSend {
+    border: 2px beveled #86d505;
+    background-color: #86d505;
+    color: #fff;
+    font-size: 14pt;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+/* Text Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Open Sans;
+    font-weight: 300;
+}
+
+h4 { font-weight: 700; }
+
+#banner h1 {
+    font-size: 24pt;
+    line-height: 36pt;
+}
+
+#contact h5, #contact h5 a:link {
+    color: #666;
+}
+
+.centered { text-align: center; }
