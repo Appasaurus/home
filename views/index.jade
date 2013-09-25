@@ -1,20 +1,44 @@
-extends layout
+doctype 5
+html
+  head
+    title Appasaurus
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700', rel='stylesheet', type='text/css')
+    link(href='//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css', rel='stylesheet', type='text/css')
+    link(href='/css/style.css', rel='stylesheet', type='text/css')
 
-block header
-  img.logo.left(src='/images/a_web.png')
+  body
+    section#header
+      a(href='/')
+        img(src='/images/a_web.png')
 
-block banner
-  h1 Is your business stuck in Jurassic times? <br />Appasaurus can help you evolve.
+    section#banner
+      h1 Hi, we're Appasaurus, and we build beautiful, functional web applications. Get in touch with us today to see how we can help grow your business.
 
-block footer
-  .copyright
-    Copyright &copy; 2013 Appasaurus
-      
-  .socialLinks
-    <div class="g-plusone" data-annotation="none"></div>
-  script.
-    (function() {
-      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-      po.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-    })();
+    section#contact
+      h2 Enter your e-mail address below, and one of our team members will get in touch with you!
+
+      form.contactForm.centered
+        div.success.centered
+          h4 Thanks, we'll talk to you soon!
+
+        div.failure.centered
+          h4 Sorry, looks like there is a problem with your e-mail address...
+        
+        span.controls
+          input.txtEmail(type='text', name='email', placeholder='you@example.com')
+          input.btnSend(type='button', value='Send')
+
+      h5.centered
+        strong We <a href='/privacy'>promise</a> to keep your e-mail address safe, and we will never give it to anyone else.
+
+    section#footer.centered
+      <div class="g-plusone" data-annotation="none"></div>
+    script.
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js').
+    script(type='text/javascript', src='/js/contactForm.js').

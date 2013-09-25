@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', routes.index);
+app.post('/contactRequest', routes.contactRequest);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
