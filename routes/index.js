@@ -3,8 +3,45 @@ var valid_email = function(emailAddress) {
     return re.test(emailAddress);
 };
 
+function send_contact_form(emailAddress) {
+    var globals = require('./config.js');
+    var nodemailer = require("nodemailer");
+
+    console.log(globals.SMTP_HOST);
+    var transport = nodemailer.createTransport("SMTP", {
+	host: globals.SMTP_HOST,
+	secureConnection: false,
+	port: 587,
+	auth: {
+            user: globals.SMTP_USERNAME,
+            pass: globals.SMTP_PASSWORD
+	}
+    });
+
+    var mailOptions = {
+	from: "Appasaurus <noreply@appasaur.us>",
+	to: globals.TEAM_EMAIL, 
+	subject: "Website Inquiry",
+	html: "<p>From: "+emailAddress+"</p><p>Please follow up with this person.</p>"
+    };
+
+    var sent = true;
+    transport.sendMail(mailOptions, function(error, response) {
+	if(error) {
+            sent = false;
+	    console.log(error);
+	} else {
+            console.log("Message sent: " + response.message);
+	}
+    });
+
+    transport.close();
+    return sent;
+}
+
+
 var send_contactRequest = function(emailAddress) {
-    console.log('Sent contact request to team');
+    send_contact_form(emailAddress);
 };
 
 var send_confirmation = function(emailAddress) {

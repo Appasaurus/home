@@ -13,7 +13,7 @@ var email_failure = function(jqHXR) {
     $('.txtEmail').addClass('failure');
 };
 
-$('.btnSend').click(function() {
+var submit_form = function() {
     var emailAddress = $('.txtEmail').val();
 
     // validate email and send reply
@@ -28,4 +28,14 @@ $('.btnSend').click(function() {
             email_failure(jqXHR);
         }
     });
+};
+
+$('form').keydown(function(event){
+    if(event.keyCode == 13) {
+	event.preventDefault();
+	submit_form();
+    }
 });
+
+$('input.btnSend').click(function() { submit_form() });
+
